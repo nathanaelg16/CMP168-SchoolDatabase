@@ -3,8 +3,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//LINK TO VIDEO: https://youtu.be/bdxKLDnPRhc
-//FOR SOURCE CODE VISIT https://github.com/nathanaelg16
 public class Driver_SchoolDB {
     private static ArrayList<Student> students = new ArrayList<>();
     private static ArrayList<Faculty> faculty = new ArrayList<>();
@@ -14,8 +12,8 @@ public class Driver_SchoolDB {
     private static ArrayList<Employee> employees = new ArrayList<>();
 
     public static void main(String[] args) throws InterruptedException{
-        /*System.out.println("Welcome to the SCHOOL DATABASE\nBy: Nathanael Gutierrez\nVersion: 1.0.0-stable\n");
-        Thread.sleep(2000);*/
+        System.out.println("Welcome to the SCHOOL DATABASE\nBy: Nathanael Gutierrez\nVersion: 1.0.0-stable\n");
+        Thread.sleep(2000);
         Scanner in = null;
         try {
             File dbFile = new File("SchoolDB_Initial.txt");
@@ -109,77 +107,77 @@ public class Driver_SchoolDB {
         }
         printSchoolDatabaseInfo();
 
-//        final String createCourseMenuOption = "(1) Create a course";
-//        final String createNewGeneralStaffMenuOption = "(2) Add new general staff";
-//        final String createNewFacultyMemberMenuOption = "(3) Add new faculty";
-//        final String createNewStudentMenuOption = "(4) Add new student";
-//        final String viewCoursesMenuOption = "(5) View courses";
-//        final String viewFacultyMenuOption = "(6) View faculty";
-//        final String viewStudentsMenuOption = "(7) View students";
-//        final String viewGeneralStaffMenuOption = "(8) View general staff";
-//
-//        in = new Scanner(System.in);
-//        boolean q = true;
-//
-//        while (q) {
-//            System.out.printf("\n\n***********\nMAIN MENU\n***********\n\n\t%-40s %s\n\t%-40s %s\n\n\t%-40s %s\n\t%-40s %s\n\nSelect an option, or quit (0): ",
-//                    createCourseMenuOption, createNewFacultyMemberMenuOption, createNewGeneralStaffMenuOption,
-//                    createNewStudentMenuOption, viewCoursesMenuOption, viewStudentsMenuOption,
-//                    viewFacultyMenuOption, viewGeneralStaffMenuOption);
-//            try {
-//                int option = in.nextInt();
-//                if (option <= 0) {
-//                    q = false;
-//                } else if (option > 8) {
-//                    throw new InvalidInputException();
-//                } else {
-//                    InsertionMode insertionMode;
-//                    switch (option) {
-//                        case 1:
-//                            insertionMode = getInsertionMode(in);
-//                            if (insertionMode == null) break;
-//                            createNewCourse(in, insertionMode);
-//                            break;
-//                        case 2:
-//                            insertionMode = getInsertionMode(in);
-//                            if (insertionMode == null) break;
-//                            addNewGeneralStaff(in, insertionMode);
-//                            break;
-//                        case 3:
-//                            insertionMode = getInsertionMode(in);
-//                            if (insertionMode == null) break;
-//                            addNewFaculty(in, insertionMode);
-//                            break;
-//                        case 4:
-//                            insertionMode = getInsertionMode(in);
-//                            if (insertionMode == null) break;
-//                            addNewStudent(in, insertionMode);
-//                            break;
-//                        case 5:
-//                            coursesMenu(in);
-//                            break;
-//                        case 6:
-//                            facultyMenu(in);
-//                            break;
-//                        case 7:
-//                            studentsMenu(in);
-//                            break;
-//                        case 8:
-//                            generalStaffMenu(in);
-//                            break;
-//                        default:
-//                            //should never happen
-//                            throw new InvalidInputException();
-//                    }
-//                }
-//            } catch (InputMismatchException | InvalidInputException e) {
-//                System.err.println("Please select a valid option.");
-//                in.nextLine(); //skip the new line
-//                Thread.sleep(1000);
-//            }
-//        }
-//        printSchoolDatabaseInfo();
-//        writeSchoolDatabaseInfoToFile();
+        final String createCourseMenuOption = "(1) Create a course";
+        final String createNewGeneralStaffMenuOption = "(2) Add new general staff";
+        final String createNewFacultyMemberMenuOption = "(3) Add new faculty";
+        final String createNewStudentMenuOption = "(4) Add new student";
+        final String viewCoursesMenuOption = "(5) View courses";
+        final String viewFacultyMenuOption = "(6) View faculty";
+        final String viewStudentsMenuOption = "(7) View students";
+        final String viewGeneralStaffMenuOption = "(8) View general staff";
+
+        in = new Scanner(System.in);
+        boolean q = true;
+
+        while (q) {
+            System.out.printf("\n\n***********\nMAIN MENU\n***********\n\n\t%-40s %s\n\t%-40s %s\n\n\t%-40s %s\n\t%-40s %s\n\nSelect an option, or quit (0): ",
+                    createCourseMenuOption, createNewFacultyMemberMenuOption, createNewGeneralStaffMenuOption,
+                    createNewStudentMenuOption, viewCoursesMenuOption, viewStudentsMenuOption,
+                    viewFacultyMenuOption, viewGeneralStaffMenuOption);
+            try {
+                int option = in.nextInt();
+                if (option <= 0) {
+                    q = false;
+                } else if (option > 8) {
+                    throw new InvalidInputException();
+                } else {
+                    InsertionMode insertionMode;
+                    switch (option) {
+                        case 1:
+                            insertionMode = getInsertionMode(in);
+                            if (insertionMode == null) break;
+                            createNewCourse(in, insertionMode);
+                            break;
+                        case 2:
+                            insertionMode = getInsertionMode(in);
+                            if (insertionMode == null) break;
+                            addNewGeneralStaff(in, insertionMode);
+                            break;
+                        case 3:
+                            insertionMode = getInsertionMode(in);
+                            if (insertionMode == null) break;
+                            addNewFaculty(in, insertionMode);
+                            break;
+                        case 4:
+                            insertionMode = getInsertionMode(in);
+                            if (insertionMode == null) break;
+                            addNewStudent(in, insertionMode);
+                            break;
+                        case 5:
+                            coursesMenu(in);
+                            break;
+                        case 6:
+                            facultyMenu(in);
+                            break;
+                        case 7:
+                            studentsMenu(in);
+                            break;
+                        case 8:
+                            generalStaffMenu(in);
+                            break;
+                        default:
+                            //should never happen
+                            throw new InvalidInputException();
+                    }
+                }
+            } catch (InputMismatchException | InvalidInputException e) {
+                System.err.println("Please select a valid option.");
+                in.nextLine(); //skip the new line
+                Thread.sleep(1000);
+            }
+        }
+        printSchoolDatabaseInfo();
+        writeSchoolDatabaseInfoToFile();
     }
 
     private static void writeSchoolDatabaseInfoToFile() {
